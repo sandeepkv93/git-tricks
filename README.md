@@ -46,7 +46,9 @@ This command first lists all the local branches using git branch. Then it filter
 To move a file from the staging area to the working directory in Git, you can use the git restore command with the --staged option. Here are the steps:
 
 1. Check the status of your working directory using the git status command. This will show you the files that have been modified or staged.
+
 2. Identify the file that you want to move from the staging area to the working directory.
+
 3. Use the git restore command with the --staged option and the path to the file you want to move:
 ```sh
 git restore --staged path/to/file
@@ -59,11 +61,13 @@ This command will remove the file from the staging area and copy it back to the 
 To uncommit the last commit in Git, you can use the git reset command with the --soft or --mixed option. Here are the steps:
 
 1. Open your terminal and navigate to the local repository where you want to uncommit the last commit.
+
 2. Run the following command to undo the last commit:
 ```sh
 git reset HEAD~
 ```
 This will move the HEAD pointer back one commit, effectively "uncommitting" the last commit.
+
 3. If you want to keep the changes you made in the last commit, use the --soft option:
 ```sh
 git reset --soft HEAD~
