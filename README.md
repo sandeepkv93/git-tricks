@@ -3,7 +3,8 @@
 2. [Reset only one file same as origin main](#reset-only-one-file-same-as-origin-main)
 3. [Delete all the local branches other than main](#delete-all-the-local-branches-other-than-main)
 4. [Move a file from staging area to working copy](#move-a-file-from-staging-area-to-working-copy)
-5. [git clean command variations](#git-clean-command-variations)
+5. [Uncommit the last commit](#)
+6. [git clean command variations](#git-clean-command-variations)
 
 # Set local feature branch exactly same as remote main branch
 Assuming the remote name is 'origin'
@@ -51,8 +52,31 @@ To move a file from the staging area to the working directory in Git, you can us
 git restore --staged path/to/file
 ```
 This command will remove the file from the staging area and copy it back to the working directory.
+
 4. Verify that the file has been moved to the working directory by running the git status command again. You should see that the file is now listed as "not staged for commit".
 
+# Uncommit the last commit
+To uncommit the last commit in Git, you can use the git reset command with the --soft or --mixed option. Here are the steps:
+
+1. Open your terminal and navigate to the local repository where you want to uncommit the last commit.
+2. Run the following command to undo the last commit:
+```sh
+git reset HEAD~
+```
+This will move the HEAD pointer back one commit, effectively "uncommitting" the last commit.
+3. If you want to keep the changes you made in the last commit, use the --soft option:
+```sh
+git reset --soft HEAD~
+```
+This will move the HEAD pointer back one commit and leave the changes from the last commit in the staging area.
+
+4. If you want to remove the changes you made in the last commit completely, use the --mixed option:
+```sh
+git reset --mixed HEAD~
+```
+This will move the HEAD pointer back one commit and remove the changes from the last commit from the staging area.
+
+5. Verify that the last commit has been undone by running the git log command. You should see that the last commit is no longer in the commit history.
 
 # git clean command variations
 The git clean command is used to remove untracked files from your working directory. Here are some variations of the git clean command:
