@@ -1,4 +1,7 @@
 # Table of Contents
+1. [Set local feature branch exactly same as remote main branch](#set-local-feature-branch-exactly-same-as-remote-main-branch)
+2. [Reset only one file same as origin main](#reset-only-one-file-same-as-origin-main)
+3. [Delete all the local branches other than main](#delete-all-the-local-branches-other-than-main)
 
 ## Set local feature branch exactly same as remote main branch
 Assuming the remote name is 'origin'
@@ -21,6 +24,13 @@ This will reset your local feature branch to match the latest commit on the remo
 git push --force origin feature-branch
 ```
 This will update the remote feature-branch with your local changes, which now include the latest changes from the remote main branch.
+
+## Reset only one file same as origin main
+To reset only one file to match the version in the remote main branch, you can use the following command:
+```sh
+git checkout origin/main -- path/to/file
+```
+Replace path/to/file with the actual path and filename of the file you want to reset. This command will retrieve the latest version of the file from the remote main branch and overwrite your local changes.
 
 ## Delete all the local branches other than main
 To delete all local branches other than main, you can use the following command:
