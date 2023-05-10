@@ -3,7 +3,7 @@
 2. [Reset only one file same as origin main](#reset-only-one-file-same-as-origin-main)
 3. [Delete all the local branches other than main](#delete-all-the-local-branches-other-than-main)
 4. [Move a file from staging area to working copy](#move-a-file-from-staging-area-to-working-copy)
-5. [Uncommit the last commit](#)
+5. [Uncommit the last commit](#uncommit-the-last-commit)
 6. [git clean command variations](#git-clean-command-variations)
 
 # Set local feature branch exactly same as remote main branch
