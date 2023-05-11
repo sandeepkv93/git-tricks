@@ -1,10 +1,11 @@
 # Table of Contents
 1. [Set local feature branch exactly same as remote main branch](#set-local-feature-branch-exactly-same-as-remote-main-branch)
 2. [Reset only one file same as origin main](#reset-only-one-file-same-as-origin-main)
-3. [Delete all the local branches other than main](#delete-all-the-local-branches-other-than-main)
-4. [Move a file from staging area to working copy](#move-a-file-from-staging-area-to-working-copy)
-5. [Uncommit the last commit](#uncommit-the-last-commit)
-6. [git clean command variations](#git-clean-command-variations)
+3. [Find the parent of a commit id](#find-the-parent-of-a-commit-id)
+4. [Delete all the local branches other than main](#delete-all-the-local-branches-other-than-main)
+5. [Move a file from staging area to working copy](#move-a-file-from-staging-area-to-working-copy)
+6. [Uncommit the last commit](#uncommit-the-last-commit)
+7. [git clean command variations](#git-clean-command-variations)
 
 # Set local feature branch exactly same as remote main branch
 Assuming the remote name is 'origin'
@@ -35,6 +36,24 @@ git checkout origin/main -- path/to/file
 ```
 Replace path/to/file with the actual path and filename of the file you want to reset. This command will retrieve the latest version of the file from the remote main branch and overwrite your local changes.
 
+# Find the parent of a commit id
+To get the commit immediately before a given commit in the main branch log, you can use the git log command with the `--pretty=format:%h` and `-n` options.
+
+The `--pretty=format:%h` option specifies the format of the output to be only the abbreviated commit hash, while the -n option limits the number of commits to display.
+
+Here's the basic syntax for using git log to get the commit immediately before a given commit in the main branch:
+```sh
+git log --pretty=format:%h -n 1 <commit>^
+```
+Where `<commit>` is the commit you want to get the commit before.
+
+The `^` character after `<commit>` specifies the parent of the commit. If the commit you're looking for is the immediate previous commit in the main branch, then it should be the first parent of the commit you're searching for.
+
+For example, to get the commit immediately before commit `abc123` in the main branch log, you can run:
+```sh
+git log --pretty=format:%h -n 1 abc123^
+```
+  
 # Delete all the local branches other than main
 To delete all local branches other than main, you can use the following command:
 ```sh
